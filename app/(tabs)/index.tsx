@@ -1,7 +1,6 @@
 import { Image } from "expo-image";
 import { StyleSheet } from "react-native";
 
-import { HelloWave } from "@/components/hello-wave";
 import ParallaxScrollView from "@/components/parallax-scroll-view";
 
 import Button from "@/components/Button";
@@ -20,7 +19,6 @@ export default function HomeScreen() {
       }
     >
       <ThemedView style={styles.titleContainer}>
-        <HelloWave />
         <Text>React Native</Text>
       </ThemedView>
       <Button>Text Button</Button>

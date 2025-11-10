@@ -1,18 +1,16 @@
-import { ThemedText } from "@/components/themed-text";
-import { ThemedView } from "@/components/themed-view";
-import { Dimensions } from "react-native";
+import Text from "@/components/Text";
+
+import { Dimensions, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const { height } = Dimensions.get("window");
 
 const TabExplore = () => {
   return (
-    <SafeAreaView>
-      <ThemedView
-        style={{ backgroundColor: "rgba(0,0,0,0.3)", height: height }}
-      >
-        <ThemedText>Hello</ThemedText>
-      </ThemedView>
+    <SafeAreaView style={{ flex: 1 }}>
+      <View style={{ flex: 1 }}>
+        <Text style={{ color: "black" }}>Custom Status Bar</Text>
+      </View>
     </SafeAreaView>
   );
 };
