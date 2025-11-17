@@ -15,7 +15,7 @@ import React, { useEffect } from "react";
 SplashScreen.preventAutoHideAsync();
 
 export const unstable_settings = {
-  anchor: "(tabs)",
+  anchor: "index",
 };
 
 export default function RootLayout() {
@@ -41,12 +41,10 @@ export default function RootLayout() {
   return (
     <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
       <StatusBar style="dark" />
-
-      <Stack initialRouteName="(tabs)">
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+      <Stack>
         <Stack.Screen
-          name="modal"
-          options={{ presentation: "modal", title: "Modal" }}
+          name="index"
+          options={{ title: "Home", headerShown: false }}
         />
       </Stack>
     </ThemeProvider>
