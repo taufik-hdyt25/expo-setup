@@ -1,15 +1,11 @@
-import Button from "@/components/Button";
+import Login from "@/containers/Login/Login";
 import React from "react";
-import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <View>
-        <Text>OKE</Text>
-        <Button>OKE</Button>
-      </View>
+      <Login />
     </SafeAreaView>
   );
 };
