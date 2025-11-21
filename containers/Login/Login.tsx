@@ -1,21 +1,12 @@
-import { useAuth } from "@/providers/AuthContext";
 import { saveToken } from "@/utils/secureStore";
 import { useFormik } from "formik";
 import React from "react";
-import {
-  Dimensions,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Dimensions, Text, TouchableOpacity, View } from "react-native";
+import { TextInput } from "react-native-paper";
 
 const { height, width } = Dimensions.get("window");
 
 const Login = () => {
-  const { profile, token } = useAuth();
-  console.log(token);
-
   const formik = useFormik({
     initialValues: {
       password: "",
@@ -38,33 +29,23 @@ const Login = () => {
 
       <View style={{ gap: 10, marginTop: 20 }}>
         <View>
-          <Text style={{ fontSize: 14 }}>Email</Text>
           <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#ccc",
-              padding: 12,
-              borderRadius: 8,
-              fontSize: 16,
-            }}
+            mode="outlined"
+            label="Email"
+            placeholder="Input email"
             value={formik.values.email}
             onChangeText={formik.handleChange("email")}
-            placeholder="Masukkan teks"
+            // right={<TextInput.Affix text="/100" />}
           />
         </View>
         <View>
-          <Text style={{ fontSize: 14 }}>Password</Text>
           <TextInput
-            style={{
-              borderWidth: 1,
-              borderColor: "#ccc",
-              padding: 12,
-              borderRadius: 8,
-              fontSize: 16,
-            }}
+            mode="outlined"
+            label="Password"
+            placeholder="Input password"
             value={formik.values.password}
             onChangeText={formik.handleChange("password")}
-            placeholder="Masukkan teks"
+            // right={<TextInput.Affix text="/100" />}
           />
         </View>
       </View>

@@ -6,6 +6,7 @@ import {
 import { useFonts } from "expo-font";
 import { SplashScreen, Stack } from "expo-router";
 
+import { PaperProvider } from "react-native-paper";
 import "react-native-reanimated";
 
 import { useColorScheme } from "@/hooks/use-color-scheme";
@@ -39,16 +40,27 @@ export default function RootLayout() {
     return null;
   }
 
+  // const theme = {
+  //   ...DefaultTheme,
+  //   colors: {
+  //     ...DefaultTheme.colors,
+  //     primary: "tomato",
+  //     secondary: "yellow",
+  //   },
+  // };
+
   return (
     <AuthProvider>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        <StatusBar style="dark" />
-        <Stack>
-          <Stack.Screen
-            name="index"
-            options={{ title: "Home", headerShown: false }}
-          />
-        </Stack>
+        <PaperProvider>
+          <StatusBar style="dark" />
+          <Stack>
+            <Stack.Screen
+              name="index"
+              options={{ title: "Home", headerShown: false }}
+            />
+          </Stack>
+        </PaperProvider>
       </ThemeProvider>
     </AuthProvider>
   );
